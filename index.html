@@ -17,8 +17,8 @@
   --diwali-glow: rgba(255, 139, 43, 0.35);
   --white: #f8fbff;
   --muted: #a4b3ca;
-  --glass: rgba(11, 23, 42, 0.72);
-  --glass-border: rgba(255, 200, 106, 0.22);
+  --glass: rgba(11, 23, 42, 0.75);
+  --glass-border: rgba(255, 200, 106, 0.25);
 }
 
 * {
@@ -31,14 +31,38 @@ html {
 
 body {
   margin: 0;
-  background: var(--navy);
+  background: radial-gradient(circle at 50% 20%, #2a0805 0%, #0b172a 50%, #050b14 100%);
   color: var(--white);
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
   position: relative;
+  min-height: 100vh;
 }
 
-/* Background Canvas & Video Styling with Diwali Theme */
+/* Pure CSS Diwali Festive Background Glows & Patterns */
+.diwali-bg-glow {
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(255, 139, 43, 0.3) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(255, 200, 106, 0.22) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(74, 13, 10, 0.6) 0%, transparent 75%),
+    linear-gradient(135deg, rgba(5, 11, 20, 0.9) 0%, rgba(42, 8, 5, 0.5) 50%, rgba(11, 23, 42, 0.9) 100%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Festive Ambient Rangoli / Light Overlay Pattern */
+.diwali-bg-pattern {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 200, 106, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Background Particle Canvas */
 #bg-canvas {
   position: fixed;
   top: 0;
@@ -47,36 +71,6 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: -1;
-}
-
-.video-container {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -3;
-}
-
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.35) contrast(1.2) saturate(1.2) hue-rotate(-5deg);
-  transform: scale(1.03);
-}
-
-.video-overlay {
-  position: fixed;
-  inset: 0;
-  background: 
-    radial-gradient(circle at 50% 30%, rgba(255, 139, 43, 0.25), rgba(74, 13, 10, 0.4) 40%, transparent 70%),
-    radial-gradient(circle at 20% 80%, rgba(255, 200, 106, 0.15), transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(85, 230, 255, 0.1), transparent 40%),
-    linear-gradient(180deg, rgba(5, 11, 20, 0.65) 0%, rgba(74, 13, 10, 0.3) 50%, rgba(5, 11, 20, 0.85) 100%);
-  pointer-events: none;
-  z-index: -2;
-  box-shadow: inset 0 0 100px rgba(255, 139, 43, 0.1);
 }
 
 /* Navigation */
@@ -213,14 +207,14 @@ h1 .highlight {
 
 /* Countdown Section */
 .countdown-container {
-  background: linear-gradient(135deg, rgba(11, 23, 42, 0.8), rgba(74, 13, 10, 0.4));
+  background: linear-gradient(135deg, rgba(11, 23, 42, 0.85), rgba(74, 13, 10, 0.5));
   border: 1px solid var(--gold);
   backdrop-filter: blur(20px);
   border-radius: 24px;
   padding: 28px;
   max-width: 680px;
   margin: 20px auto 40px;
-  box-shadow: 0 10px 40px rgba(255, 139, 43, 0.25), inset 0 0 20px rgba(255, 200, 106, 0.1);
+  box-shadow: 0 10px 40px rgba(255, 139, 43, 0.3), inset 0 0 20px rgba(255, 200, 106, 0.15);
 }
 
 .countdown-title {
@@ -237,8 +231,8 @@ h1 .highlight {
 }
 
 .countdown-title::before, .countdown-title::after {
-  content: "✧";
-  color: var(--orange);
+  content: "🪔";
+  font-size: 0.9rem;
 }
 
 .timer-boxes {
@@ -248,8 +242,8 @@ h1 .highlight {
 }
 
 .timer-box {
-  background: radial-gradient(circle at top, rgba(255, 139, 43, 0.15), rgba(5, 11, 20, 0.8));
-  border: 1px solid rgba(255, 200, 106, 0.3);
+  background: radial-gradient(circle at top, rgba(255, 139, 43, 0.2), rgba(5, 11, 20, 0.85));
+  border: 1px solid rgba(255, 200, 106, 0.35);
   border-radius: 16px;
   padding: 16px 20px;
   min-width: 88px;
@@ -330,11 +324,11 @@ h1 .highlight {
 
 .calc-result {
   text-align: center;
-  background: linear-gradient(135deg, rgba(255, 139, 43, 0.15), rgba(11, 23, 42, 0.9));
+  background: linear-gradient(135deg, rgba(255, 139, 43, 0.18), rgba(11, 23, 42, 0.9));
   border: 1px solid var(--gold);
   padding: 32px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(255, 139, 43, 0.2);
+  box-shadow: 0 10px 30px rgba(255, 139, 43, 0.25);
 }
 
 .calc-result-num {
@@ -373,7 +367,7 @@ h1 .highlight {
   display: grid;
   place-items: center;
   font-size: 1.8rem;
-  background: linear-gradient(135deg, rgba(255, 139, 43, 0.2), rgba(255, 200, 106, 0.1));
+  background: linear-gradient(135deg, rgba(255, 139, 43, 0.25), rgba(255, 200, 106, 0.15));
   border: 1px solid rgba(255, 200, 106, 0.4);
   box-shadow: 0 0 20px rgba(255, 139, 43, 0.3);
 }
@@ -401,7 +395,7 @@ h1 .highlight {
 
 .strip-card.solution {
   border-color: var(--gold);
-  background: linear-gradient(135deg, rgba(11, 23, 42, 0.9), rgba(74, 13, 10, 0.2));
+  background: linear-gradient(135deg, rgba(11, 23, 42, 0.95), rgba(74, 13, 10, 0.3));
 }
 
 .strip-card.solution h2 span {
@@ -421,14 +415,13 @@ h1 .highlight {
   border-radius: 32px;
   padding: clamp(50px, 8vw, 80px) 36px;
   border: 2px solid var(--gold);
-  background: radial-gradient(circle at center, rgba(74, 13, 10, 0.6) 0%, rgba(11, 45, 88, 0.9) 100%);
+  background: radial-gradient(circle at center, rgba(74, 13, 10, 0.7) 0%, rgba(11, 45, 88, 0.95) 100%);
   backdrop-filter: blur(24px);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 25px 80px rgba(255, 139, 43, 0.4), inset 0 0 40px rgba(255, 200, 106, 0.2);
+  box-shadow: 0 25px 80px rgba(255, 139, 43, 0.45), inset 0 0 40px rgba(255, 200, 106, 0.25);
 }
 
-/* Ambient Diya Glow Effect on Panel */
 .join-panel::before {
   content: "";
   position: absolute;
@@ -436,7 +429,7 @@ h1 .highlight {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 139, 43, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 139, 43, 0.2) 0%, transparent 70%);
   pointer-events: none;
   animation: rotateGlow 20s linear infinite;
 }
@@ -472,7 +465,7 @@ h1 .highlight {
 
 .limit {
   color: #ffe09a;
-  background: rgba(255, 139, 43, 0.3);
+  background: rgba(255, 139, 43, 0.35);
   border: 1px solid var(--gold);
   padding: 8px 20px;
   border-radius: 50px;
@@ -492,7 +485,7 @@ footer {
   padding: 40px 6%;
   font-size: 0.9rem;
   color: var(--muted);
-  background: linear-gradient(180deg, rgba(11, 23, 42, 0.9) 0%, #050b14 100%);
+  background: linear-gradient(180deg, rgba(11, 23, 42, 0.95) 0%, #050b14 100%);
 }
 
 footer strong {
@@ -529,13 +522,9 @@ footer strong {
 </head>
 <body>
 
-<!-- Background Layer & Animated Particle Canvas -->
-<div class="video-container">
-  <video id="bg-video" autoplay loop muted playsinline poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwNTBiMTQiLz48L3N2Zz4=">
-    <source src="Untitled - 20 October 2026 at 02.11.23.mp4" type="video/mp4">
-  </video>
-</div>
-<div class="video-overlay"></div>
+<!-- Festive Diwali Background Glows & Pattern Overlays (No Video Required) -->
+<div class="diwali-bg-glow"></div>
+<div class="diwali-bg-pattern"></div>
 <canvas id="bg-canvas"></canvas>
 
 <!-- Top Navigation -->
@@ -645,7 +634,7 @@ footer strong {
 </footer>
 
 <script>
-// Canvas Spark Particle Engine
+// Floating Diwali Spark / Diya Light Particle Engine
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -664,12 +653,13 @@ class Spark {
   reset() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height + canvas.height;
-    this.size = Math.random() * 3 + 1;
-    this.speedY = Math.random() * 1.5 + 0.5;
-    this.speedX = (Math.random() - 0.5) * 0.8;
-    this.opacity = Math.random() * 0.8 + 0.2;
-    const colors = ['#ffc86a', '#ff8b2b', '#ffa500', '#55e6ff', '#ffffff'];
-    const weights = [0.4, 0.3, 0.1, 0.1, 0.1];
+    this.size = Math.random() * 3.5 + 1;
+    this.speedY = Math.random() * 1.2 + 0.4;
+    this.speedX = (Math.random() - 0.5) * 0.6;
+    this.opacity = Math.random() * 0.85 + 0.15;
+    // Festive Warm Color Palette (Gold, Deep Orange, Diya Flame Yellow, Cyan)
+    const colors = ['#ffc86a', '#ff8b2b', '#ffa500', '#ffe09a', '#55e6ff', '#ffffff'];
+    const weights = [0.35, 0.3, 0.15, 0.1, 0.05, 0.05];
     let random = Math.random();
     for (let i = 0; i < colors.length; i++) {
         if (random < weights[i]) {
@@ -689,13 +679,13 @@ class Spark {
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fillStyle = this.color;
     ctx.globalAlpha = this.opacity;
-    ctx.shadowBlur = 12;
+    ctx.shadowBlur = 14;
     ctx.shadowColor = this.color;
     ctx.fill();
   }
 }
 
-for (let i = 0; i < 45; i++) {
+for (let i = 0; i < 55; i++) {
   particles.push(new Spark());
 }
 
