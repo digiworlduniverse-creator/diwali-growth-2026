@@ -1,460 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Iss Diwali, digital game badlo. Join DiGi World Universe for smarter digital growth.">
-  <meta name="theme-color" content="#101513">
-  <title>Diwali Digital Growth | DiGi World Universe</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      color-scheme: dark;
-      --ink: #101513;
-      --panel: #171e1a;
-      --paper: #f5f0e5;
-      --muted: #b6b9aa;
-      --saffron: #ffb84a;
-      --coral: #ff765e;
-      --mint: #8de0b0;
-      --line: rgba(245, 240, 229, .16);
-      --display: "Space Grotesk", "Trebuchet MS", sans-serif;
-      --body: "DM Sans", "Segoe UI", sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Iss Diwali, digital game badlo. Join DiGi World Universe's WhatsApp launch group and unlock smarter digital growth.">
+<title>Diwali Digital Growth | DiGi World Universe</title>
+<style>
+:root {
+  --navy: #050b14;
+  --dark-blue: #0b172a;
+  --blue: #102d58;
+  --cyan: #55e6ff;
+  --gold: #ffc86a;
+  --orange: #ff8b2b;
+  --deep-diwali-red: #4a0d0a;
+  --diwali-glow: rgba(255, 139, 43, 0.35);
+  --white: #f8fbff;
+  --muted: #a4b3ca;
+  --glass: rgba(11, 23, 42, 0.72);
+  --glass-border: rgba(255, 200, 106, 0.22);
+}
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      overflow-x: hidden;
-      background: var(--ink);
-      color: var(--paper);
-      font-family: var(--body);
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; }
-    .backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background:
-        radial-gradient(ellipse at 76% 18%, rgba(255, 118, 94, .17), transparent 34rem),
-        radial-gradient(ellipse at 18% 68%, rgba(141, 224, 176, .08), transparent 28rem),
-        linear-gradient(135deg, #101513 10%, #18201b 55%, #101513 100%);
-    }
-    #sparks {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      pointer-events: none;
-      opacity: .7;
-    }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
-    .topbar {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      border-bottom: 1px solid var(--line);
-    }
-    .brand { display: flex; align-items: center; gap: 13px; text-decoration: none; }
-    .brand-mark {
-      width: 38px;
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--saffron);
-      border-radius: 50%;
-      color: var(--saffron);
-      font: 700 20px var(--display);
-    }
-    .brand-name { font: 700 16px var(--display); letter-spacing: 0; }
-    .brand-name small {
-      display: block;
-      margin-top: 2px;
-      color: var(--muted);
-      font: 600 9px var(--body);
-      letter-spacing: 0;
-    }
-    .top-note {
-      color: var(--saffron);
-      font-size: 12px;
-      font-weight: 700;
-    }
-    .hero {
-      min-height: 630px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(270px, .85fr);
-      align-items: center;
-      gap: 36px;
-      padding-block: 74px 64px;
-    }
-    .hero-copy { position: relative; z-index: 1; animation: rise .75s both; }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--mint);
-      font-size: 12px;
-      font-weight: 700;
-    }
-    .eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--mint); }
-    h1, h2, p { margin-top: 0; }
-    h1 {
-      max-width: 700px;
-      margin: 20px 0;
-      font: 700 64px/1.03 var(--display);
-      letter-spacing: 0;
-    }
-    h1 span { color: var(--saffron); }
-    .hero-copy > p {
-      max-width: 600px;
-      margin-bottom: 28px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.7;
-    }
-    .button {
-      min-height: 54px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 0 23px;
-      border: 0;
-      border-radius: 4px;
-      background: var(--saffron);
-      color: #1c1a12;
-      font: 700 14px var(--body);
-      text-decoration: none;
-      transition: transform .2s ease, background .2s ease;
-    }
-    .button:hover { transform: translateY(-2px); background: #ffd17e; }
-    .button[aria-disabled="true"] { background: #42463d; color: #e4e0d5; cursor: not-allowed; }
-    .button[aria-disabled="true"]:hover { transform: none; }
-    .button-arrow { font-size: 19px; line-height: 1; }
-    .micro { margin: 12px 0 0; color: var(--muted); font-size: 12px; }
-    .festive-art {
-      position: relative;
-      min-height: 400px;
-      display: grid;
-      place-items: center;
-      animation: rise .9s .12s both;
-    }
-    .sun {
-      position: absolute;
-      width: min(330px, 85%);
-      aspect-ratio: 1;
-      border: 1px solid rgba(255, 184, 74, .45);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 184, 74, .2), rgba(255, 118, 94, .08) 49%, transparent 70%);
-      box-shadow: 0 0 100px rgba(255, 118, 94, .1);
-    }
-    .sun::before, .sun::after {
-      content: "";
-      position: absolute;
-      inset: 13%;
-      border: 1px solid rgba(141, 224, 176, .36);
-      border-radius: 50%;
-      transform: rotate(45deg) scaleX(.55);
-    }
-    .sun::after { transform: rotate(-45deg) scaleX(.55); }
-    .diya {
-      position: relative;
-      width: 132px;
-      height: 86px;
-      margin-top: 76px;
-      border-radius: 10px 10px 70px 70px;
-      background: linear-gradient(160deg, #ffca65, #dc6548 78%);
-      clip-path: polygon(0 0, 100% 0, 82% 77%, 50% 100%, 18% 77%);
-      filter: drop-shadow(0 16px 34px rgba(255, 118, 94, .24));
-    }
-    .diya::before {
-      content: "";
-      position: absolute;
-      width: 28px;
-      height: 43px;
-      left: calc(50% - 14px);
-      top: -34px;
-      border-radius: 70% 30% 65% 35%;
-      background: linear-gradient(150deg, #fff5b0, var(--saffron) 52%, var(--coral));
-      transform: rotate(45deg);
-      box-shadow: 0 0 32px rgba(255, 184, 74, .72);
-      animation: flicker 2.4s ease-in-out infinite alternate;
-    }
-    .art-label {
-      position: absolute;
-      right: 0;
-      bottom: 20px;
-      padding: 10px 14px;
-      border-left: 2px solid var(--mint);
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.5;
-    }
-    .art-label strong { display: block; color: var(--paper); font-size: 13px; }
-    .countdown {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      padding: 18px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-    .countdown-title { max-width: 130px; color: var(--muted); font-size: 11px; line-height: 1.5; }
-    .timer { display: flex; gap: 16px; }
-    .time-unit { min-width: 46px; }
-    .time-num { display: block; color: var(--paper); font: 700 24px var(--display); }
-    .time-label { color: var(--muted); font-size: 9px; text-transform: uppercase; }
-    .section { padding-block: 58px; border-top: 1px solid var(--line); }
-    .section-heading { max-width: 620px; margin-bottom: 28px; }
-    .section-heading h2 { margin: 12px 0; font: 600 32px/1.15 var(--display); }
-    .section-heading p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
-    .calculator {
-      display: grid;
-      grid-template-columns: 1fr 250px;
-      gap: 46px;
-      align-items: center;
-      padding: 25px 0 10px;
-    }
-    .calc-label { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 18px; font-size: 14px; font-weight: 700; }
-    .calc-label output { color: var(--saffron); }
-    input[type="range"] { width: 100%; accent-color: var(--coral); cursor: pointer; }
-    .range-ends { display: flex; justify-content: space-between; margin-top: 7px; color: var(--muted); font-size: 11px; }
-    .estimate { padding-left: 28px; border-left: 1px solid var(--line); }
-    .estimate-label { color: var(--muted); font-size: 11px; }
-    .estimate output { display: block; margin-top: 5px; color: var(--mint); font: 700 46px var(--display); }
-    .disclaimer { margin: 6px 0 0; color: var(--muted); font-size: 10px; }
-    .split { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .split article { padding: 26px 30px 26px 0; }
-    .split article + article { padding-left: 30px; border-left: 1px solid var(--line); }
-    .split h2 { margin-bottom: 10px; font: 600 20px/1.25 var(--display); }
-    .split h2 span { color: var(--coral); }
-    .split article + article h2 span { color: var(--mint); }
-    .split p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
-    .join { padding-block: 72px; text-align: center; }
-    .join .eyebrow { justify-content: center; }
-    .join .eyebrow::after { content: ""; width: 24px; height: 1px; background: var(--mint); }
-    .join h2 { max-width: 650px; margin: 16px auto; font: 700 42px/1.08 var(--display); }
-    .join > p { max-width: 570px; margin: 0 auto 24px; color: var(--muted); font-size: 14px; line-height: 1.7; }
-    .invite-status { min-height: 18px; margin-top: 12px; color: var(--muted); font-size: 11px; }
-    footer { border-top: 1px solid var(--line); padding-block: 22px; color: var(--muted); font-size: 11px; }
-    .footer-inner { display: flex; justify-content: space-between; gap: 16px; }
-    footer strong { color: var(--paper); }
-    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes flicker { from { transform: rotate(42deg) scale(.96); } to { transform: rotate(48deg) scale(1.05); } }
-    @media (max-width: 760px) {
-      .wrap { width: min(100% - 36px, 560px); }
-      .topbar { min-height: 70px; }
-      .top-note { max-width: 135px; text-align: right; font-size: 10px; }
-      .hero { min-height: auto; grid-template-columns: 1fr; gap: 5px; padding-block: 58px 38px; }
-      h1 { max-width: 560px; font-size: 48px; }
-      .hero-copy > p { font-size: 15px; }
-      .festive-art { min-height: 290px; }
-      .sun { width: 245px; }
-      .art-label { right: 2px; bottom: 0; }
-      .countdown { gap: 15px; }
-      .timer { gap: 10px; }
-      .time-unit { min-width: 39px; }
-      .time-num { font-size: 20px; }
-      .calculator { grid-template-columns: 1fr; gap: 24px; }
-      .estimate { padding: 18px 0 0; border-top: 1px solid var(--line); border-left: 0; }
-      .estimate output { font-size: 38px; }
-      .split { grid-template-columns: 1fr; }
-      .split article, .split article + article { padding: 22px 0; border-left: 0; }
-      .split article + article { border-top: 1px solid var(--line); }
-      .join { padding-block: 56px; }
-      .join h2 { font-size: 34px; }
-      .footer-inner { flex-direction: column; }
-    }
-    @media (max-width: 370px) {
-      .wrap { width: calc(100% - 28px); }
-      h1 { font-size: 42px; }
-      .timer { gap: 6px; }
-      .time-unit { min-width: 36px; }
-      .countdown-title { max-width: 105px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-    }
-  </style>
-</head>
-<body>
-  <div class="backdrop" aria-hidden="true"></div>
-  <canvas id="sparks" aria-hidden="true"></canvas>
-  <header class="wrap topbar">
-    <a class="brand" href="#top" aria-label="DiGi World Universe home">
-      <span class="brand-mark" aria-hidden="true">D</span>
-      <span class="brand-name">DiGi World<small>UNIVERSE · WORK WITH FLOW</small></span>
-    </a>
-    <span class="top-note">Diwali Growth Launch · 2026</span>
-  </header>
+* {
+  box-sizing: border-box;
+}
 
-  <main id="top">
-    <section class="wrap hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <span class="eyebrow">A festive launch for ambitious businesses</span>
-        <h1 id="hero-title">Iss Diwali,<br><span>Digital Game Badlo.</span></h1>
-        <p>Miss kiya toh growth chhuta. Is festive season, apne business ko smarter marketing, automated leads aur real revenue scale ke liye ready karo.</p>
-        <a class="button" href="#join">Launch group details <span class="button-arrow" aria-hidden="true">↗</span></a>
-        <p class="micro">Practical growth ideas. No noisy sales pitch.</p>
-        <div class="countdown" aria-label="Countdown to Diwali 2026">
-          <span class="countdown-title" id="countdown-title">Diwali 2026 begins in</span>
-          <div class="timer" aria-live="off">
-            <div class="time-unit"><span class="time-num" id="days">00</span><span class="time-label">Days</span></div>
-            <div class="time-unit"><span class="time-num" id="hours">00</span><span class="time-label">Hours</span></div>
-            <div class="time-unit"><span class="time-num" id="minutes">00</span><span class="time-label">Mins</span></div>
-            <div class="time-unit"><span class="time-num" id="seconds">00</span><span class="time-label">Secs</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="festive-art" aria-label="A glowing Diwali diya illustration" role="img">
-        <div class="sun"><div class="diya"></div></div>
-        <div class="art-label"><strong>Grow with intention.</strong>Build a smarter customer journey.</div>
-      </div>
-    </section>
+html {
+  scroll-behavior: smooth;
+}
 
-    <section class="wrap section" aria-labelledby="estimate-title">
-      <div class="section-heading">
-        <span class="eyebrow">A simple growth estimate</span>
-        <h2 id="estimate-title">What could your lead goal look like?</h2>
-        <p>Explore a sample conversion scenario. Actual results vary by offer, audience and follow-up.</p>
-      </div>
-      <div class="calculator">
-        <div>
-          <label class="calc-label" for="lead-range"><span>Monthly leads goal</span><output id="lead-count" for="lead-range">500</output></label>
-          <input type="range" id="lead-range" min="100" max="5000" step="100" value="500">
-          <div class="range-ends"><span>100 leads</span><span>5,000 leads</span></div>
-        </div>
-        <div class="estimate">
-          <span class="estimate-label">Illustrative sales at 5%</span>
-          <output id="conv-count" for="lead-range">25</output>
-          <p class="disclaimer">An example, not a performance guarantee.</p>
-        </div>
-      </div>
-    </section>
+body {
+  margin: 0;
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
 
-    <section class="wrap section" aria-label="Growth challenges and approach">
-      <div class="split">
-        <article>
-          <h2>Ads pe paisa udaakar thak gaye ho, <span>par results zero hain?</span></h2>
-          <p>Clicks aa rahe hain, lekin paying customers nahi? Asli growth pipeline kahin gayab toh nahi ho gayi?</p>
-        </article>
-        <article>
-          <h2>Clicks ko customers mein badalne ka <span>smart system.</span></h2>
-          <p>Hum laate hain growth funnels jo customer conversion par focus karte hain. Apne core business par dhyaan rakho; strategy aur scale mein hum saath hain.</p>
-        </article>
-      </div>
-    </section>
+/* Background Canvas & Video Styling with Diwali Theme */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+}
 
-    <section class="wrap join" id="join" aria-labelledby="join-title">
-      <span class="eyebrow">DiGi World Universe · Diwali 2026</span>
-      <h2 id="join-title">Growth ka next step<br>abhi lo.</h2>
-      <p>Get launch updates, practical growth frameworks and strategies for your business from DiGi World Universe.</p>
-      <a class="button" id="whatsapp-link" data-group-link="https://chat.whatsapp.com/Fsf7DafLBlk5fOSokZ6LZ0" aria-disabled="true" tabindex="-1">WhatsApp invite link coming soon <span class="button-arrow" aria-hidden="true">→</span></a>
-      <p class="invite-status" id="invite-status" role="status">The group invite link has not been added yet.</p>
-    </section>
-  </main>
+.video-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -3;
+}
 
-  <footer>
-    <div class="wrap footer-inner">
-      <span><strong>DiGi World Universe</strong> · Digital Marketing &amp; Business Automation</span>
-      <span>© 2026 DiGi World Universe. All rights reserved.</span>
-    </div>
-  </footer>
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.35) contrast(1.2) saturate(1.2) hue-rotate(-5deg);
+  transform: scale(1.03);
+}
 
-  <script>
-    const canvas = document.getElementById('sparks');
-    const context = canvas.getContext('2d');
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let sparks = [];
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 50% 30%, rgba(255, 139, 43, 0.25), rgba(74, 13, 10, 0.4) 40%, transparent 70%),
+    radial-gradient(circle at 20% 80%, rgba(255, 200, 106, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(85, 230, 255, 0.1), transparent 40%),
+    linear-gradient(180deg, rgba(5, 11, 20, 0.65) 0%, rgba(74, 13, 10, 0.3) 50%, rgba(5, 11, 20, 0.85) 100%);
+  pointer-events: none;
+  z-index: -2;
+  box-shadow: inset 0 0 100px rgba(255, 139, 43, 0.1);
+}
 
-    function resizeCanvas() {
-      const ratio = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = window.innerWidth * ratio;
-      canvas.height = window.innerHeight * ratio;
-      context.setTransform(ratio, 0, 0, ratio, 0, 0);
-      sparks = Array.from({ length: Math.min(42, Math.floor(window.innerWidth / 24)) }, () => ({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        radius: Math.random() * 1.5 + .4,
-        speed: Math.random() * .35 + .1,
-        color: Math.random() > .5 ? '#ffb84a' : '#8de0b0'
-      }));
-    }
+/* Navigation */
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
 
-    function animateSparks() {
-      context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      for (const spark of sparks) {
-        context.beginPath();
-        context.arc(spark.x, spark.y, spark.radius, 0, Math.PI * 2);
-        context.fillStyle = spark.color;
-        context.globalAlpha = .55;
-        context.fill();
-        spark.y -= spark.speed;
-        if (spark.y < -4) {
-          spark.y = window.innerHeight + 4;
-          spark.x = Math.random() * window.innerWidth;
-        }
-      }
-      context.globalAlpha = 1;
-      if (!reduceMotion) requestAnimationFrame(animateSparks);
-    }
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    if (!reduceMotion) animateSparks();
+.official-logo {
+  height: 52px;
+  width: auto;
+  filter: drop-shadow(0 0 15px rgba(255, 139, 43, 0.6));
+}
 
-    const diwaliDate = new Date('2026-11-08T00:00:00+05:30').getTime();
-    const countdownTitle = document.getElementById('countdown-title');
-    const timerIds = ['days', 'hours', 'minutes', 'seconds'];
+.nav-tag {
+  color: var(--gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, rgba(255, 139, 43, 0.15), rgba(255, 200, 106, 0.15));
+  border: 1px solid var(--gold);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(255, 139, 43, 0.3);
+}
 
-    function updateCountdown() {
-      const difference = diwaliDate - Date.now();
-      if (difference <= 0) {
-        countdownTitle.textContent = 'Wishing you a bright Diwali';
-        timerIds.forEach((id) => { document.getElementById(id).textContent = '00'; });
-        return;
-      }
-      const values = [
-        Math.floor(difference / 86400000),
-        Math.floor((difference % 86400000) / 3600000),
-        Math.floor((difference % 3600000) / 60000),
-        Math.floor((difference % 60000) / 1000)
-      ];
-      timerIds.forEach((id, index) => {
-        document.getElementById(id).textContent = String(values[index]).padStart(2, '0');
-      });
-    }
-    updateCountdown();
-    window.setInterval(updateCountdown, 1000);
+/* Hero Section */
+.hero {
+  min-height: 85vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 40px 6% 60px;
+  position: relative;
+  z-index: 2;
+}
 
-    const slider = document.getElementById('lead-range');
-    const leadCount = document.getElementById('lead-count');
-    const conversionCount = document.getElementById('conv-count');
-    slider.addEventListener('input', () => {
-      const leads = Number(slider.value);
-      leadCount.value = leads.toLocaleString();
-      conversionCount.value = Math.round(leads * .05).toLocaleString();
-    });
+.hero-inner {
+  max-width: 920px;
+}
 
-    const inviteLink = document.getElementById('whatsapp-link');
-    const groupUrl = inviteLink.dataset.groupLink.trim();
-    if (groupUrl) {
-      inviteLink.href = groupUrl;
-      inviteLink.target = '_blank';
-      inviteLink.rel = 'noopener noreferrer';
-      inviteLink.removeAttribute('aria-disabled');
-      inviteLink.removeAttribute('tabindex');
-      inviteLink.innerHTML = 'Join WhatsApp VIP Group <span class="button-arrow" aria-hidden="true">→</span>';
-      document.getElementById('invite-status').textContent = 'Join the DiGi World Universe launch group on WhatsApp.';
-    }
-  </script>
-</body>
-</html>
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(135deg, rgba(255, 139, 43, 0.2), rgba(255, 200, 106, 0.1));
+  backdrop-filter: blur(12px);
+  border-radius: 100px;
+  padding: 8px 20px;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  box-shadow: 0 0 30px rgba(255, 139, 43, 0.3);
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  margin: 28px 0 20px;
+  font-weight: 900;
+}
+
+h1 .highlight {
+  background: linear-gradient(90deg, #ffbc3b, #ffda8b, #ff7700, #ffbc3b);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: goldShimmer 6s linear infinite;
+  filter: drop-shadow(0 0 25px rgba(255, 139, 43, 0.5));
+}
+
+@keyframes goldShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+.hero p {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 720px;
+  margin: 0 auto 36px;
+}
+
+/* Buttons & CTA with Diwali Glow */
+.cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ffaa3a, var(--orange), #d95304);
+  color: #1a0800;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 20px 36px;
+  border-radius: 18px;
+  font-size: 1.15rem;
+  box-shadow: 0 0 45px rgba(255, 139, 43, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.cta:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 60px rgba(255, 139, 43, 0.9), 0 0 20px rgba(255, 200, 106, 0.4);
+}
+
+.micro {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Countdown Section */
+.countdown-container {
+  background: linear-gradient(135deg, rgba(11, 23, 42, 0.8), rgba(74, 13, 10, 0.4));
+  border: 1px solid var(--gold);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 28px;
+  max-width: 680px;
+  margin: 20px auto 40px;
+  box-shadow: 0 10px 40px rgba(255, 139, 43, 0.25), inset 0 0 20px rgba(255, 200, 106, 0.1);
+}
+
+.countdown-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.countdown-title::before, .countdown-title::after {
+  content: "✧";
+  color: var(--orange);
+}
+
+.timer-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.timer-box {
+  background: radial-gradient(circle at top, rgba(255, 139, 43, 0.15), rgba(5, 11, 20, 0.8));
+  border: 1px solid rgba(255, 200, 106, 0.3);
+  border-radius: 16px;
+  padding: 16px 20px;
+  min-width: 88px;
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.1);
+}
+
+.timer-num {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffe09a;
+  text-shadow: 0 0 15px rgba(255, 200, 106, 0.6);
+}
+
+.timer-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+/* Interactive Calculator */
+.calc-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 6%;
+}
+
+.calc-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.calc-input label {
+  display: block;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+.calc-slider {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  outline: none;
+  -webkit-appearance: none;
+  accent-color: var(--orange);
+  cursor: pointer;
+}
+
+.calc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 15px var(--orange);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.calc-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.calc-result {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 139, 43, 0.15), rgba(11, 23, 42, 0.9));
+  border: 1px solid var(--gold);
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 139, 43, 0.2);
+}
+
+.calc-result-num {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(255, 200, 106, 0.8);
+  margin: 10px 0;
+}
+
+/* Feature Cards Strip */
+.strip {
+  max-width: 1080px;
+  margin: 60px auto;
+  padding: 0 6%;
+}
+
+.strip-card {
+  background: var(--glass);
+  border: 1px solid rgba(255, 200, 106, 0.25);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 36px clamp(24px, 5vw, 48px);
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.icon {
+  flex: 0 0 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, rgba(255, 139, 43, 0.2), rgba(255, 200, 106, 0.1));
+  border: 1px solid rgba(255, 200, 106, 0.4);
+  box-shadow: 0 0 20px rgba(255, 139, 43, 0.3);
+}
+
+.strip-card h2 {
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.strip-card p {
