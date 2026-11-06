@@ -1,745 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Iss Diwali, digital game badlo. Join DiGi World Universe's WhatsApp launch group and unlock smarter digital growth.">
-<title>Diwali Digital Growth | DiGi World Universe</title>
-<style>
-:root {
-  --navy: #050b14;
-  --dark-blue: #0b172a;
-  --blue: #102d58;
-  --cyan: #55e6ff;
-  --gold: #ffc86a;
-  --orange: #ff8b2b;
-  --deep-diwali-red: #4a0d0a;
-  --diwali-glow: rgba(255, 139, 43, 0.35);
-  --white: #f8fbff;
-  --muted: #a4b3ca;
-  --glass: rgba(11, 23, 42, 0.75);
-  --glass-border: rgba(255, 200, 106, 0.25);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: radial-gradient(circle at 50% 20%, #2a0805 0%, #0b172a 50%, #050b14 100%);
-  color: var(--white);
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  overflow-x: hidden;
-  position: relative;
-  min-height: 100vh;
-}
-
-/* Pure CSS Diwali Festive Background Glows & Patterns */
-.diwali-bg-glow {
-  position: fixed;
-  inset: 0;
-  background: 
-    radial-gradient(circle at 15% 15%, rgba(255, 139, 43, 0.3) 0%, transparent 45%),
-    radial-gradient(circle at 85% 85%, rgba(255, 200, 106, 0.22) 0%, transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(74, 13, 10, 0.6) 0%, transparent 75%),
-    linear-gradient(135deg, rgba(5, 11, 20, 0.9) 0%, rgba(42, 8, 5, 0.5) 50%, rgba(11, 23, 42, 0.9) 100%);
-  pointer-events: none;
-  z-index: -2;
-}
-
-/* Festive Ambient Rangoli / Light Overlay Pattern */
-.diwali-bg-pattern {
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 200, 106, 0.08) 1px, transparent 1px);
-  background-size: 36px 36px;
-  pointer-events: none;
-  z-index: -2;
-}
-
-/* Background Particle Canvas */
-#bg-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Navigation */
-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 6%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  z-index: 10;
-}
-
-.brand-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.official-logo {
-  height: 52px;
-  width: auto;
-  filter: drop-shadow(0 0 15px rgba(255, 139, 43, 0.6));
-}
-
-.nav-tag {
-  color: var(--gold);
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, rgba(255, 139, 43, 0.15), rgba(255, 200, 106, 0.15));
-  border: 1px solid var(--gold);
-  padding: 6px 16px;
-  border-radius: 100px;
-  font-weight: 700;
-  box-shadow: 0 0 15px rgba(255, 139, 43, 0.3);
-}
-
-/* Hero Section */
-.hero {
-  min-height: 85vh;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 40px 6% 60px;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-inner {
-  max-width: 920px;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid var(--glass-border);
-  background: linear-gradient(135deg, rgba(255, 139, 43, 0.2), rgba(255, 200, 106, 0.1));
-  backdrop-filter: blur(12px);
-  border-radius: 100px;
-  padding: 8px 20px;
-  color: var(--gold);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  box-shadow: 0 0 30px rgba(255, 139, 43, 0.3);
-}
-
-h1 {
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
-  line-height: 1.05;
-  letter-spacing: -.045em;
-  margin: 28px 0 20px;
-  font-weight: 900;
-}
-
-h1 .highlight {
-  background: linear-gradient(90deg, #ffbc3b, #ffda8b, #ff7700, #ffbc3b);
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: goldShimmer 6s linear infinite;
-  filter: drop-shadow(0 0 25px rgba(255, 139, 43, 0.5));
-}
-
-@keyframes goldShimmer {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 300% 50%; }
-}
-
-.hero p {
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  line-height: 1.7;
-  color: var(--muted);
-  max-width: 720px;
-  margin: 0 auto 36px;
-}
-
-/* Buttons & CTA with Diwali Glow */
-.cta {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(135deg, #ffaa3a, var(--orange), #d95304);
-  color: #1a0800;
-  font-weight: 800;
-  text-decoration: none;
-  padding: 20px 36px;
-  border-radius: 18px;
-  font-size: 1.15rem;
-  box-shadow: 0 0 45px rgba(255, 139, 43, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-  border: none;
-  cursor: pointer;
-  position: relative;
-}
-
-.cta:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 60px rgba(255, 139, 43, 0.9), 0 0 20px rgba(255, 200, 106, 0.4);
-}
-
-.micro {
-  margin-top: 16px;
-  color: var(--muted);
-  font-size: 0.85rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-}
-
-/* Countdown Section */
-.countdown-container {
-  background: linear-gradient(135deg, rgba(11, 23, 42, 0.85), rgba(74, 13, 10, 0.5));
-  border: 1px solid var(--gold);
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 28px;
-  max-width: 680px;
-  margin: 20px auto 40px;
-  box-shadow: 0 10px 40px rgba(255, 139, 43, 0.3), inset 0 0 20px rgba(255, 200, 106, 0.15);
-}
-
-.countdown-title {
-  font-size: 0.95rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.countdown-title::before, .countdown-title::after {
-  content: "🪔";
-  font-size: 0.9rem;
-}
-
-.timer-boxes {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
-
-.timer-box {
-  background: radial-gradient(circle at top, rgba(255, 139, 43, 0.2), rgba(5, 11, 20, 0.85));
-  border: 1px solid rgba(255, 200, 106, 0.35);
-  border-radius: 16px;
-  padding: 16px 20px;
-  min-width: 88px;
-  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.1);
-}
-
-.timer-num {
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: #ffe09a;
-  text-shadow: 0 0 15px rgba(255, 200, 106, 0.6);
-}
-
-.timer-label {
-  font-size: 0.75rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-top: 4px;
-}
-
-/* Interactive Calculator */
-.calc-section {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 6%;
-}
-
-.calc-card {
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(20px);
-  border-radius: 28px;
-  padding: 40px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-}
-
-.calc-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.calc-input label {
-  display: block;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 16px;
-  color: var(--white);
-}
-
-.calc-slider {
-  width: 100%;
-  height: 8px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 4px;
-  outline: none;
-  -webkit-appearance: none;
-  accent-color: var(--orange);
-  cursor: pointer;
-}
-
-.calc-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 15px var(--orange);
-  cursor: pointer;
-  transition: transform 0.1s ease;
-}
-
-.calc-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.2);
-}
-
-.calc-result {
-  text-align: center;
-  background: linear-gradient(135deg, rgba(255, 139, 43, 0.18), rgba(11, 23, 42, 0.9));
-  border: 1px solid var(--gold);
-  padding: 32px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(255, 139, 43, 0.25);
-}
-
-.calc-result-num {
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--gold);
-  text-shadow: 0 0 20px rgba(255, 200, 106, 0.8);
-  margin: 10px 0;
-}
-
-/* Feature Cards Strip */
-.strip {
-  max-width: 1080px;
-  margin: 60px auto;
-  padding: 0 6%;
-}
-
-.strip-card {
-  background: var(--glass);
-  border: 1px solid rgba(255, 200, 106, 0.25);
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 36px clamp(24px, 5vw, 48px);
-  display: flex;
-  gap: 28px;
-  align-items: flex-start;
-  margin-bottom: 24px;
-  position: relative;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-}
-
-.icon {
-  flex: 0 0 60px;
-  height: 60px;
-  border-radius: 16px;
-  display: grid;
-  place-items: center;
-  font-size: 1.8rem;
-  background: linear-gradient(135deg, rgba(255, 139, 43, 0.25), rgba(255, 200, 106, 0.15));
-  border: 1px solid rgba(255, 200, 106, 0.4);
-  box-shadow: 0 0 20px rgba(255, 139, 43, 0.3);
-}
-
-.strip-card h2 {
-  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
-  margin: 0 0 12px;
-  letter-spacing: -0.02em;
-}
-
-.strip-card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.strip-card.problem {
-  border-color: rgba(255, 139, 43, 0.3);
-}
-
-.strip-card.problem h2 span {
-  color: #ff9e5e;
-}
-
-.strip-card.solution {
-  border-color: var(--gold);
-  background: linear-gradient(135deg, rgba(11, 23, 42, 0.95), rgba(74, 13, 10, 0.3));
-}
-
-.strip-card.solution h2 span {
-  color: #ffe09a;
-  text-shadow: 0 0 10px rgba(255, 200, 106, 0.5);
-}
-
-/* Join Panel */
-.join {
-  margin: 80px auto 100px;
-  max-width: 1000px;
-  padding: 0 6%;
-}
-
-.join-panel {
-  text-align: center;
-  border-radius: 32px;
-  padding: clamp(50px, 8vw, 80px) 36px;
-  border: 2px solid var(--gold);
-  background: radial-gradient(circle at center, rgba(74, 13, 10, 0.7) 0%, rgba(11, 45, 88, 0.95) 100%);
-  backdrop-filter: blur(24px);
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 25px 80px rgba(255, 139, 43, 0.45), inset 0 0 40px rgba(255, 200, 106, 0.25);
-}
-
-.join-panel::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 139, 43, 0.2) 0%, transparent 70%);
-  pointer-events: none;
-  animation: rotateGlow 20s linear infinite;
-}
-
-@keyframes rotateGlow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.join-panel h2 {
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  letter-spacing: -0.03em;
-  margin: 0 0 16px;
-  position: relative;
-}
-
-.join-panel p {
-  color: var(--white);
-  line-height: 1.7;
-  max-width: 680px;
-  margin: 0 auto 36px;
-  position: relative;
-  font-size: 1.15rem;
-}
-
-.join-panel .cta {
-  background: linear-gradient(135deg, #ffe6a0, var(--gold), #ff9721);
-  color: #0c0814;
-  box-shadow: 0 0 60px rgba(255, 200, 106, 0.8);
-  position: relative;
-  padding: 22px 42px;
-}
-
-.limit {
-  color: #ffe09a;
-  background: rgba(255, 139, 43, 0.35);
-  border: 1px solid var(--gold);
-  padding: 8px 20px;
-  border-radius: 50px;
-  display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  box-shadow: 0 0 20px rgba(255, 139, 43, 0.5);
-}
-
-/* Footer */
-footer {
-  border-top: 1px solid rgba(255, 200, 106, 0.3);
-  text-align: center;
-  padding: 40px 6%;
-  font-size: 0.9rem;
-  color: var(--muted);
-  background: linear-gradient(180deg, rgba(11, 23, 42, 0.95) 0%, #050b14 100%);
-}
-
-footer strong {
-  color: var(--gold);
-}
-
-@media (max-width: 768px) {
-  .calc-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diwali Digital Growth | DiGi World Universe</title>
   
-  .timer-boxes {
-    gap: 10px;
-  }
-  
-  .timer-box {
-    padding: 12px 14px;
-    min-width: 72px;
-  }
-  
-  .timer-num {
-    font-size: 1.6rem;
-  }
+  <!-- Preconnect and Fonts for Faster Rendering (Optimized for LCP) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  .strip-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
-  }
-}
-</style>
+  <style>
+    :root {
+      --bg-color: #0b0f19;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --border-color: rgba(255, 184, 0, 0.2);
+      --accent-gold: #ffb800;
+      --accent-orange: #ff5722;
+      --text-main: #ffffff;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 184, 0, 0.1);
+      border: 1px solid var(--border-color);
+      color: var(--accent-gold);
+      padding: 6px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 50px;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, #ffb800, #ff5722);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+    }
+
+    /* Countdown Timer Styling */
+    .countdown-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(10px);
+    }
+
+    .countdown-title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .timer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .time-box {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px 8px;
+    }
+
+    .time-box span {
+      display: block;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .time-box label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Interactive Calculator Slider Card */
+    .calculator-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 184, 0, 0.15);
+      border-radius: 20px;
+      padding: 32px 24px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .calculator-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .slider-group {
+      margin: 20px 0;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .slider-header span:last-child {
+      color: var(--accent-gold);
+      font-size: 1.2rem;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 184, 0, 0.5);
+    }
+
+    .calc-result {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .calc-result .result-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .calc-result .result-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+    }
+
+    /* CTA Button */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #ffb800, #ff5722);
+      color: #000;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(255, 184, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 16px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(255, 184, 0, 0.4);
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 60px;
+    }
+
+    /* Feature Section */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px 24px;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+
+    .section-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
+    .section-card p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    footer {
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 20px;
+    }
+
+    @media (max-width: 480px) {
+      .timer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Festive Diwali Background Glows & Pattern Overlays (No Video Required) -->
-<div class="diwali-bg-glow"></div>
-<div class="diwali-bg-pattern"></div>
-<canvas id="bg-canvas"></canvas>
+  <div class="container">
+    <!-- Badge -->
+    <div class="badge" fetchpriority="high">✦ DIWALI GROWTH LAUNCH ✦</div>
 
-<!-- Top Navigation -->
-<nav>
-  <div class="brand-container">
-    <svg class="official-logo" viewBox="0 0 520 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="4" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
-      </defs>
-      <text x="10" y="75" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="50" fill="#FFC86A" letter-spacing="3" filter="url(#gold-glow)">DIGI WORLD</text>
-      <text x="65" y="112" font-family="'Inter', Arial, sans-serif" font-weight="700" font-size="20" fill="#FF8B2B" letter-spacing="9">WORK WITH FLOW</text>
-      <g transform="translate(440, 70)">
-        <circle r="14" fill="#FFFFFF"/>
-        <text x="-6" y="7" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="20" fill="#050B14">S</text>
-        <circle cx="0" cy="-32" r="5" fill="#FF8B2B"/>
-        <circle cx="22" cy="-22" r="5" fill="#FF8B2B"/>
-        <circle cx="32" cy="0" r="5" fill="#FF8B2B"/>
-        <circle cx="22" cy="22" r="5" fill="#FF8B2B"/>
-        <circle cx="0" cy="32" r="5" fill="#FF8B2B"/>
-        <circle cx="-22" cy="22" r="5" fill="#FF8B2B"/>
-        <circle cx="-32" cy="0" r="5" fill="#FF8B2B"/>
-        <circle cx="-22" cy="-22" r="5" fill="#FF8B2B"/>
-      </g>
-    </svg>
-  </div>
-  <div class="nav-tag">✦ Diwali Growth Launch ✦</div>
-</nav>
+    <!-- Main Hero Header -->
+    <h1 fetchpriority="high">Iss Diwali, <span>Digital Game Badlo.</span></h1>
+    <p class="subtitle">Miss kiya toh growth chhuta. Is festive season, apne business ko smarter marketing, automated leads aur real revenue scale ke liye ready karo.</p>
 
-<main>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">🪔 Exclusive Festive Launch · Digital Scale</div>
-      <h1>Iss Diwali,<br><span class="highlight">Digital Game Badlo.</span></h1>
-      <p>Miss kiya toh growth chhuta. Is festive season, apne business ko smarter marketing, automated leads aur real revenue scale ke liye ready karo.</p>
+    <!-- Dynamic Countdown Timer -->
+    <div class="countdown-container">
+      <div class="countdown-title">🪔 Event Launching In 🪔</div>
+      <div class="timer-grid">
+        <div class="time-box">
+          <span id="days">00</span>
+          <label>Days</label>
+        </div>
+        <div class="time-box">
+          <span id="hours">00</span>
+          <label>Hours</label>
+        </div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <label>Mins</label>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <label>Secs</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Lead Potential Calculator Slider -->
+    <div class="calculator-card">
+      <h3>🎯 Estimate Your Festive Growth</h3>
+      <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Move the slider to estimate your business potential this festive season through smart automation.</p>
       
-      <!-- Countdown Timer -->
-      <div class="countdown-container">
-        <div class="countdown-title">Event Launching In</div>
-        <div class="timer-boxes">
-          <div class="timer-box"><div class="timer-num" id="days">00</div><div class="timer-label">Days</div></div>
-          <div class="timer-box"><div class="timer-num" id="hours">00</div><div class="timer-label">Hours</div></div>
-          <div class="timer-box"><div class="timer-num" id="minutes">00</div><div class="timer-label">Mins</div></div>
-          <div class="timer-box"><div class="timer-num" id="seconds">00</div><div class="timer-label">Secs</div></div>
+      <div class="slider-group">
+        <div class="slider-header">
+          <span>Monthly Leads Target:</span>
+          <span id="sliderValue">5,000</span>
         </div>
+        <input type="range" id="leadsSlider" min="500" max="20000" step="500" value="5000">
       </div>
 
-      <a class="cta" href="#join">Launch Group Join Karein <span aria-hidden="true">↗</span></a>
-      <div class="micro">Zero ad-spend needed. Join our private WhatsApp VIP broadcast.</div>
-    </div>
-  </section>
-
-  <!-- Interactive Growth Estimator -->
-  <section class="calc-section">
-    <div class="calc-card">
-      <div class="calc-grid">
-        <div class="calc-input">
-          <label for="lead-range">Monthly Leads Goal: <span id="lead-count" style="color:var(--gold)">500</span></label>
-          <input type="range" id="lead-range" class="calc-slider" min="100" max="5000" step="100" value="500">
-          <p style="color:var(--muted); font-size:0.9rem; margin-top:16px;">Move the slider to estimate your business potential this festive season through smart automation.</p>
+      <div class="calc-result">
+        <div>
+          <div class="result-label">Est. Sales Conversions (5%)</div>
+          <div style="font-size: 12px; color: var(--text-muted);">Smart Funnel Conversion Rate</div>
         </div>
-        <div class="calc-result">
-          <div style="color:var(--gold); font-size:0.9rem; text-transform:uppercase; font-weight:700; letter-spacing:0.1em;">Est. Sales Conversions</div>
-          <div class="calc-result-num" id="conv-count">25</div>
-          <div style="color:var(--cyan); font-size:0.9rem; margin-top:6px; font-weight:600;">Smart Funnel Conversion Rate</div>
-        </div>
+        <div class="result-value" id="salesResult">250</div>
       </div>
     </div>
-  </section>
 
-  <!-- Problem / Solution Cards -->
-  <section class="strip">
-    <div class="strip-card problem">
-      <div class="icon">⚡</div>
-      <div>
-        <h2>Ads pe paisa udaakar thak gaye ho, <span>par results zero hain?</span></h2>
-        <p>Clicks aa rahe hain, lekin paying customers nahi? Asli growth pipeline kahin gayab toh nahi ho gayi?</p>
-      </div>
+    <!-- CTA Join Group -->
+    <a href="https://wa.me/" target="_blank" class="btn-primary">
+      Launch Group Join Karein <span>↗</span>
+    </a>
+    <div class="note">Zero ad-spend needed. Join our private WhatsApp VIP broadcast.</div>
+
+    <!-- Feature Block -->
+    <div class="section-card">
+      <h2>Ads pe paisa udaakar thak gaye ho, par results zero hain?</h2>
+      <p>Clicks aa rahe hain, lekin paying customers nahi? Asli growth pipeline kahin gayab toh nahi ho gayi? Hum laate hain proven growth funnels jo direct customer conversion deliver karte hain. Apne core business operation par focus rakho; strategy aur scale hum sambhalte hain.</p>
     </div>
-    <div class="strip-card solution">
-      <div class="icon">🪔</div>
-      <div>
-        <h2>Clicks ko customers mein badalne ka <span>smart system.</span></h2>
-        <p>Hum laate hain proven growth funnels jo direct customer conversion deliver karte hain. Apne core business operation par focus rakho; strategy aur scale hum sambhalte hain.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Final CTA Panel -->
-  <section class="join" id="join">
-    <div class="join-panel">
-      <div class="limit">🔥 Limited Invite Only · Organic Diwali VIP Group</div>
-      <h2>Growth ka next step<br>abhi lo.</h2>
-      <p>Niche button tap karke WhatsApp launch group join karein. Get exclusive launch updates, growth frameworks and high-ROI strategies for your business.</p>
-      <a class="cta" href="url?id=155" target="_blank" rel="noopener">Join WhatsApp VIP Group <span aria-hidden="true">→</span></a>
-      <div class="micro">No spam. Only high-value agency insights &amp; campaign reveals.</div>
-    </div>
-  </section>
-</main>
+    <!-- Footer -->
+    <footer>
+      <strong>DiGi World Universe</strong> · Digital Marketing & Business Automation Agency<br>
+      © 2026 DiGi World Universe. All rights reserved.
+    </footer>
+  </div>
 
-<footer>
-  <strong>DiGi World Universe</strong> · Digital Marketing &amp; Business Automation Agency<br>
-  © 2026 DiGi World Universe. All rights reserved.
-</footer>
+  <!-- JavaScript for Countdown Timer & Lead Calculator -->
+  <script>
+    // 1. Countdown Timer Logic
+    const launchDate = new Date("2026-11-15T00:00:00").getTime();
 
-<script>
-// Floating Diwali Spark / Diya Light Particle Engine
-const canvas = document.getElementById('bg-canvas');
-const ctx = canvas.getContext('2d');
-let particles = [];
+    function updateTimer() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
+      if (distance < 0) {
+        document.querySelector(".countdown-container").innerHTML = "<h3 style='color:var(--accent-gold);'>🚀 EVENT IS LIVE NOW!</h3>";
+        return;
+      }
 
-class Spark {
-  constructor() {
-    this.reset();
-  }
-  reset() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height + canvas.height;
-    this.size = Math.random() * 3.5 + 1;
-    this.speedY = Math.random() * 1.2 + 0.4;
-    this.speedX = (Math.random() - 0.5) * 0.6;
-    this.opacity = Math.random() * 0.85 + 0.15;
-    // Festive Warm Color Palette (Gold, Deep Orange, Diya Flame Yellow, Cyan)
-    const colors = ['#ffc86a', '#ff8b2b', '#ffa500', '#ffe09a', '#55e6ff', '#ffffff'];
-    const weights = [0.35, 0.3, 0.15, 0.1, 0.05, 0.05];
-    let random = Math.random();
-    for (let i = 0; i < colors.length; i++) {
-        if (random < weights[i]) {
-            this.color = colors[i];
-            break;
-        }
-        random -= weights[i];
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = String(days).padStart(2, '0');
+      document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+      document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+      document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
     }
-  }
-  update() {
-    this.y -= this.speedY;
-    this.x += this.speedX;
-    if (this.y < -10) this.reset();
-  }
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = this.color;
-    ctx.globalAlpha = this.opacity;
-    ctx.shadowBlur = 14;
-    ctx.shadowColor = this.color;
-    ctx.fill();
-  }
-}
 
-for (let i = 0; i < 55; i++) {
-  particles.push(new Spark());
-}
+    updateTimer();
+    setInterval(updateTimer, 1000);
 
-function animateSparks() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    p.update();
-    p.draw();
-  });
-  requestAnimationFrame(animateSparks);
-}
-animateSparks();
+    // 2. Interactive Leads Calculator Slider Logic
+    const slider = document.getElementById('leadsSlider');
+    const sliderValue = document.getElementById('sliderValue');
+    const salesResult = document.getElementById('salesResult');
 
-// Interactive Slider Logic
-const leadRange = document.getElementById('lead-range');
-const leadCount = document.getElementById('lead-count');
-const convCount = document.getElementById('conv-count');
-
-if (leadRange) {
-  leadRange.addEventListener('input', (e) => {
-    const leads = parseInt(e.target.value);
-    leadCount.textContent = leads.toLocaleString();
-    convCount.textContent = Math.round(leads * 0.05).toLocaleString();
-  });
-}
-
-// Target Countdown Timer Logic
-const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 7);
-
-function updateTimer() {
-  const now = new Date().getTime();
-  const diff = targetDate - now;
-
-  if (diff <= 0) return;
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-  document.getElementById('days').textContent = String(days).padStart(2, '0');
-  document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-  document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-  document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-}
-
-setInterval(updateTimer, 1000);
-updateTimer();
-</script>
-
-<!-- Cloudflare Web Analytics -->
-<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba9e458f03b04333af4df7e9037e5431"}'></script>
-<!-- End Cloudflare Web Analytics -->
-
+    slider.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value);
+      sliderValue.innerText = val.toLocaleString();
+      // Calculates estimated sales conversions at a 5% conversion rate
+      const conversions = Math.round(val * 0.05);
+      salesResult.innerText = conversions.toLocaleString();
+    });
+  </script>
 </body>
 </html>
