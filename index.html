@@ -424,8 +424,8 @@
         const textureLoader = new THREE.TextureLoader();
         let characterMesh;
         
-        // Using a reliable public CDN link for the character asset
-        const characterImageUrl = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';
+        // Exact character asset path mapped to your uploaded environment
+        const characterImageUrl = 'watermarked_img_2867409068118996662.png';
 
         textureLoader.load(
             characterImageUrl,
@@ -514,5 +514,6 @@
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
-    </script></body>
+    </script>
+</body>
 </html>
