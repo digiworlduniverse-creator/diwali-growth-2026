@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kal Se Game Change. Empowering local businesses in Mira Road & Mira Bhayandar with high-converting digital marketing, local SEO, and automated WhatsApp lead funnels.">
-    <meta name="keywords" content="Digital Marketing Agency in Mira Road, Digital Marketing Mira Bhayandar, Local SEO Agency Mira Road, Business Automation, DiGi World Universe">
-    <title>DiGi World Universe | Next-Gen Digital Growth in Mira Road</title>
+    <title>DiGi World Universe | Next-Gen Digital Growth Mumbai</title>
+    <meta name="description" content="Dominate the digital landscape across Mumbai, Mira Road, and beyond. DiGi World Universe delivers cutting-edge local SEO, automated funnels, and high-converting growth engines.">
+    <meta name="keywords" content="Digital Marketing Agency Mumbai, Local SEO Expert Mumbai, Automated Lead Generation, Business Growth Mumbai, DiGi World Universe">
     
-    <!-- OpenGraph Social Sharing Meta Tags -->
-    <meta property="og:title" content="DiGi World Universe | Next-Gen Digital Growth in Mira Road">
-    <meta property="og:description" content="Kal Se Game Change. Scale your business with smart local SEO and automated lead generation.">
+    <!-- OpenGraph Social Sharing -->
+    <meta property="og:title" content="DiGi World Universe | Next-Gen Digital Growth Mumbai">
+    <meta property="og:description" content="Scale your business across the Mumbai Metropolitan Region with automated workflows and dominant local SEO.">
     <meta property="og:url" content="https://digiuniverse.world">
     <meta property="og:type" content="website">
 
-    <!-- Local Business Schema Markup for Local SEO -->
+    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -37,47 +37,33 @@
         "latitude": 19.2812,
         "longitude": 72.8561
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "09:00",
-        "closes": "20:00"
-      },
       "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Mumbai" },
         { "@type": "AdministrativeArea", "name": "Mira Road" },
-        { "@type": "AdministrativeArea", "name": "Mira Bhayandar" },
-        { "@type": "AdministrativeArea", "name": "Mumbai" }
+        { "@type": "AdministrativeArea", "name": "Thane" },
+        { "@type": "AdministrativeArea", "name": "Navi Mumbai" }
       ]
     }
     </script>
 
     <style>
         :root {
-            --navy: #050b14;
-            --dark-blue: #0b172a;
-            --blue: #102d58;
-            --cyan: #55e6ff;
-            --gold: #ffc86a;
-            --orange: #ff8b2b;
-            --deep-diwali-red: #4a0d0a;
-            --white: #f8fbff;
-            --muted: #a4b3ca;
-            --glass: rgba(11, 23, 42, 0.75);
-            --glass-border: rgba(255, 200, 106, 0.25);
+            --bg-deep: #030712;
+            --gold-primary: #ffd700;
+            --gold-glow: #ffaa00;
+            --neon-cyan: #00f0ff;
+            --neon-orange: #ff6600;
+            --white: #ffffff;
+            --muted: #94a3b8;
+            --glass: rgba(11, 19, 41, 0.65);
+            --glass-border: rgba(255, 215, 0, 0.25);
         }
 
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
             margin: 0;
-            background: radial-gradient(circle at 50% 20%, #2a0805 0%, #0b172a 50%, #050b14 100%);
+            background-color: var(--bg-deep);
             color: var(--white);
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             overflow-x: hidden;
@@ -85,45 +71,38 @@
             min-height: 100vh;
         }
 
-        .diwali-bg-glow {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at 15% 15%, rgba(255, 139, 43, 0.3) 0%, transparent 45%),
-                        radial-gradient(circle at 85% 85%, rgba(255, 200, 106, 0.22) 0%, transparent 45%),
-                        radial-gradient(circle at 50% 50%, rgba(74, 13, 10, 0.6) 0%, transparent 75%),
-                        linear-gradient(135deg, rgba(5, 11, 20, 0.9) 0%, rgba(42, 8, 5, 0.5) 50%, rgba(11, 23, 42, 0.9) 100%);
-            pointer-events: none;
-            z-index: -2;
-        }
-
-        .diwali-bg-pattern {
-            position: fixed;
-            inset: 0;
-            background-image: radial-gradient(rgba(255, 200, 106, 0.08) 1px, transparent 1px);
-            background-size: 36px 36px;
-            pointer-events: none;
-            z-index: -2;
-        }
-
-        #bg-canvas {
+        #webgl-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
+            z-index: 1;
             pointer-events: none;
-            z-index: -1;
+        }
+
+        .Interface-layer {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Ambient Lighting Effects */
+        .cinematic-vignette {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(255, 170, 0, 0.15) 0%, rgba(3, 7, 18, 0.85) 75%),
+                        radial-gradient(circle at 20% 80%, rgba(0, 240, 255, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 2;
         }
 
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 6%;
+            padding: 24px 6%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            position: relative;
-            z-index: 10;
         }
 
         .brand-container {
@@ -133,617 +112,407 @@
         }
 
         .official-logo {
-            height: 52px;
+            height: 48px;
             width: auto;
-            filter: drop-shadow(0 0 15px rgba(255, 139, 43, 0.6));
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
         }
 
         .nav-tag {
-            color: var(--gold);
+            color: var(--gold-primary);
             font-size: 0.78rem;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            background: linear-gradient(90deg, rgba(255, 139, 43, 0.15), rgba(255, 200, 106, 0.15));
-            border: 1px solid var(--gold);
-            padding: 6px 16px;
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.15), rgba(0, 240, 255, 0.15));
+            border: 1px solid var(--glass-border);
+            padding: 8px 18px;
             border-radius: 100px;
             font-weight: 700;
-            box-shadow: 0 0 15px rgba(255, 139, 43, 0.3);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(12px);
         }
 
         .hero {
-            min-height: 85vh;
-            display: grid;
-            place-items: center;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 40px 6% 60px;
-            position: relative;
-            z-index: 2;
+            padding: 40px 6%;
         }
 
         .hero-inner {
-            max-width: 920px;
+            max-width: 960px;
         }
 
         .eyebrow {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             border: 1px solid var(--glass-border);
-            background: linear-gradient(135deg, rgba(255, 139, 43, 0.2), rgba(255, 200, 106, 0.1));
-            backdrop-filter: blur(12px);
+            background: var(--glass);
+            backdrop-filter: blur(16px);
             border-radius: 100px;
-            padding: 8px 20px;
-            color: var(--gold);
+            padding: 8px 24px;
+            color: var(--gold-primary);
             font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
-            box-shadow: 0 0 30px rgba(255, 139, 43, 0.3);
+            box-shadow: 0 0 35px rgba(255, 215, 0, 0.3);
         }
 
         h1 {
-            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-size: clamp(3rem, 8vw, 6rem);
             line-height: 1.05;
             letter-spacing: -.045em;
-            margin: 28px 0 20px;
+            margin: 32px 0 24px;
             font-weight: 900;
         }
 
         h1 .highlight {
-            background: linear-gradient(90deg, #ffbc3b, #ffda8b, #ff7700, #ffbc3b);
+            background: linear-gradient(90deg, #fff 0%, #ffd700 30%, #ffaa00 70%, #00f0ff 100%);
             background-size: 300% auto;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: goldShimmer 6s linear infinite;
-            filter: drop-shadow(0 0 25px rgba(255, 139, 43, 0.5));
+            animation: goldGlowAnim 7s linear infinite;
+            filter: drop-shadow(0 0 35px rgba(255, 215, 0, 0.5));
         }
 
-        @keyframes goldShimmer {
+        @keyframes goldGlowAnim {
             0% { background-position: 0% 50%; }
+            50% { background-position: 150% 50%; }
             100% { background-position: 300% 50%; }
         }
 
         .hero p {
-            font-size: clamp(1.05rem, 2vw, 1.3rem);
-            line-height: 1.7;
+            font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+            line-height: 1.75;
             color: var(--muted);
-            max-width: 720px;
-            margin: 0 auto 36px;
+            max-width: 760px;
+            margin: 0 auto 40px;
         }
 
         .cta {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #ffaa3a, var(--orange), #d95304);
-            color: #1a0800;
+            gap: 12px;
+            background: linear-gradient(135deg, #ffd700, #ff8800, #ff4400);
+            color: #030712;
             font-weight: 800;
             text-decoration: none;
-            padding: 20px 36px;
+            padding: 24px 46px;
             border-radius: 18px;
-            font-size: 1.15rem;
-            box-shadow: 0 0 45px rgba(255, 139, 43, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+            font-size: 1.25rem;
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            transition: transform 0.3s cubicGetComponent, box-shadow 0.3s ease;
             border: none;
             cursor: pointer;
-            position: relative;
         }
 
         .cta:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 0 60px rgba(255, 139, 43, 0.9), 0 0 20px rgba(255, 200, 106, 0.4);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 0 85px rgba(255, 215, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.5);
         }
 
-        .micro {
-            margin-top: 16px;
-            color: var(--muted);
-            font-size: 0.85rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        .section-spacer {
+            height: 60vh;
         }
 
-        .countdown-container {
-            background: linear-gradient(135deg, rgba(11, 23, 42, 0.85), rgba(74, 13, 10, 0.5));
-            border: 1px solid var(--gold);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 28px;
-            max-width: 680px;
-            margin: 20px auto 40px;
-            box-shadow: 0 10px 40px rgba(255, 139, 43, 0.3), inset 0 0 20px rgba(255, 200, 106, 0.15);
-        }
-
-        .countdown-title {
-            font-size: 0.95rem;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 20px;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .countdown-title::before, .countdown-title::after {
-            content: "🪔";
-            font-size: 0.9rem;
-        }
-
-        .timer-boxes {
-            display: flex;
-            justify-content: center;
-            gap: 18px;
-        }
-
-        .timer-box {
-            background: radial-gradient(circle at top, rgba(255, 139, 43, 0.2), rgba(5, 11, 20, 0.85));
-            border: 1px solid rgba(255, 200, 106, 0.35);
-            border-radius: 16px;
-            padding: 16px 20px;
-            min-width: 88px;
-            box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.1);
-        }
-
-        .timer-num {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #ffe09a;
-            text-shadow: 0 0 15px rgba(255, 200, 106, 0.6);
-        }
-
-        .timer-label {
-            font-size: 0.75rem;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 4px;
-        }
-
-        .calc-section {
+        .content-section {
             max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 6%;
+            margin: 0 auto;
+            padding: 100px 6%;
         }
 
-        .calc-card {
+        .glass-panel {
             background: var(--glass);
             border: 1px solid var(--glass-border);
             backdrop-filter: blur(20px);
-            border-radius: 28px;
-            padding: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border-radius: 32px;
+            padding: 60px;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.6);
         }
 
         .calc-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 48px;
             align-items: center;
-        }
-
-        .calc-input label {
-            display: block;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 16px;
-            color: var(--white);
         }
 
         .calc-slider {
             width: 100%;
-            height: 8px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 4px;
-            outline: none;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
             -webkit-appearance: none;
-            accent-color: var(--orange);
+            accent-color: var(--gold-primary);
             cursor: pointer;
-        }
-
-        .calc-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: var(--gold);
-            box-shadow: 0 0 15px var(--orange);
-            cursor: pointer;
-            transition: transform 0.1s ease;
-        }
-
-        .calc-slider::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
-        }
-
-        .calc-result {
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 139, 43, 0.18), rgba(11, 23, 42, 0.9));
-            border: 1px solid var(--gold);
-            padding: 32px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(255, 139, 43, 0.25);
         }
 
         .calc-result-num {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
-            color: var(--gold);
-            text-shadow: 0 0 20px rgba(255, 200, 106, 0.8);
-            margin: 10px 0;
+            color: var(--gold-primary);
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+            margin: 16px 0;
         }
 
-        .strip {
-            max-width: 1080px;
-            margin: 60px auto;
-            padding: 0 6%;
-        }
-
-        .strip-card {
-            background: var(--glass);
-            border: 1px solid rgba(255, 200, 106, 0.25);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 36px clamp(24px, 5vw, 48px);
-            display: flex;
-            gap: 28px;
-            align-items: flex-start;
-            margin-bottom: 24px;
-            position: relative;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-        }
-
-        .icon {
-            flex: 0 0 60px;
-            height: 60px;
-            border-radius: 16px;
-            display: grid;
-            place-items: center;
-            font-size: 1.8rem;
-            background: linear-gradient(135deg, rgba(255, 139, 43, 0.25), rgba(255, 200, 106, 0.15));
-            border: 1px solid rgba(255, 200, 106, 0.4);
-            box-shadow: 0 0 20px rgba(255, 139, 43, 0.3);
-        }
-
-        .strip-card h2 {
-            font-size: clamp(1.3rem, 2.8vw, 1.8rem);
-            margin: 0 0 12px;
-            letter-spacing: -0.02em;
-        }
-
-        .strip-card p {
-            margin: 0;
+        .footer-seo {
+            text-align: center;
+            padding: 85px 6%;
             color: var(--muted);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .strip-card.problem {
-            border-color: rgba(255, 139, 43, 0.3);
-        }
-
-        .strip-card.problem h2 span {
-            color: #ff9e5e;
-        }
-
-        .strip-card.solution {
-            border-color: var(--gold);
-            background: linear-gradient(135deg, rgba(11, 23, 42, 0.95), rgba(74, 13, 10, 0.3));
-        }
-
-        .strip-card.solution h2 span {
-            color: #ffe09a;
-            text-shadow: 0 0 10px rgba(255, 200, 106, 0.5);
-        }
-
-        .join {
-            margin: 80px auto 100px;
-            max-width: 1000px;
-            padding: 0 6%;
-        }
-
-        .join-panel {
-            text-align: center;
-            border-radius: 32px;
-            padding: clamp(50px, 8vw, 80px) 36px;
-            border: 2px solid var(--gold);
-            background: radial-gradient(circle at center, rgba(74, 13, 10, 0.7) 0%, rgba(11, 45, 88, 0.95) 100%);
-            backdrop-filter: blur(24px);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 25px 80px rgba(255, 139, 43, 0.45), inset 0 0 40px rgba(255, 200, 106, 0.25);
-        }
-
-        .join-panel::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 139, 43, 0.2) 0%, transparent 70%);
-            pointer-events: none;
-            animation: rotateGlow 20s linear infinite;
-        }
-
-        @keyframes rotateGlow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .join-panel h2 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            letter-spacing: -0.03em;
-            margin: 0 0 16px;
-            position: relative;
-        }
-
-        .join-panel p {
-            color: var(--white);
-            line-height: 1.7;
-            max-width: 680px;
-            margin: 0 auto 36px;
-            position: relative;
-            font-size: 1.15rem;
-        }
-
-        .join-panel .cta {
-            background: linear-gradient(135deg, #ffe6a0, var(--gold), #ff9721);
-            color: #0c0814;
-            box-shadow: 0 0 60px rgba(255, 200, 106, 0.8);
-            position: relative;
-            padding: 22px 42px;
-        }
-
-        .limit {
-            color: #ffe09a;
-            background: rgba(255, 139, 43, 0.35);
-            border: 1px solid var(--gold);
-            padding: 8px 20px;
-            border-radius: 50px;
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: 800;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            margin-bottom: 24px;
-            box-shadow: 0 0 20px rgba(255, 139, 43, 0.5);
-        }
-
-        .seo-local-footer-text {
-            max-width: 800px;
-            margin: 40px auto 20px;
-            padding: 0 6%;
-            font-size: 0.85rem;
-            color: var(--muted);
-            text-align: center;
-            line-height: 1.6;
-            opacity: 0.75;
-        }
-
-        footer {
-            border-top: 1px solid rgba(255, 200, 106, 0.3);
-            text-align: center;
-            padding: 40px 6%;
             font-size: 0.9rem;
-            color: var(--muted);
-            background: linear-gradient(180deg, rgba(11, 23, 42, 0.95) 0%, #050b14 100%);
+            line-height: 1.8;
+            max-width: 850px;
+            margin: 0 auto;
         }
 
-        footer strong { color: var(--gold); }
+        .footer-seo strong { color: var(--gold-primary); }
+
+        .firework-particle {
+            position: absolute;
+            pointer-events: none;
+            border-radius: 50%;
+            animation: explode 1s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; filter: brightness(2); }
+            100% { transform: translate(-50%, -50%) scale(4); opacity: 0; filter: brightness(1); }
+        }
 
         @media (max-width: 768px) {
-            .calc-grid { grid-template-columns: 1fr; gap: 28px; }
-            .timer-boxes { gap: 10px; }
-            .timer-box { padding: 12px 14px; min-width: 72px; }
-            .timer-num { font-size: 1.6rem; }
-            .strip-card { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 36px; }
         }
     </style>
 </head>
 <body>
-    <div class="diwali-bg-glow"></div>
-    <div class="diwali-bg-pattern"></div>
-    <canvas id="bg-canvas"></canvas>
+    <div id="webgl-container"></div>
+    <div class="cinematic-vignette"></div>
 
-    <!-- Top Navigation -->
-    <nav>
-        <div class="brand-container">
-            <svg class="official-logo" viewBox="0 0 520 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="4" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                    </filter>
-                </defs>
-                <text x="10" y="75" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="50" fill="#FFC86A" letter-spacing="3" filter="url(#gold-glow)">DIGI WORLD</text>
-                <text x="65" y="112" font-family="'Inter', Arial, sans-serif" font-weight="700" font-size="20" fill="#FF8B2B" letter-spacing="9">WORK WITH FLOW</text>
-                <g transform="translate(440, 70)">
-                    <circle r="14" fill="#FFFFFF"/>
-                    <text x="-6" y="7" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="20" fill="#050B14">S</text>
-                    <circle cx="0" cy="-32" r="5" fill="#FF8B2B"/>
-                    <circle cx="22" cy="-22" r="5" fill="#FF8B2B"/>
-                    <circle cx="32" cy="0" r="5" fill="#FF8B2B"/>
-                    <circle cx="22" cy="22" r="5" fill="#FF8B2B"/>
-                    <circle cx="0" cy="32" r="5" fill="#FF8B2B"/>
-                    <circle cx="-22" cy="22" r="5" fill="#FF8B2B"/>
-                    <circle cx="-32" cy="0" r="5" fill="#FF8B2B"/>
-                    <circle cx="-22" cy="-22" r="5" fill="#FF8B2B"/>
-                </g>
-            </svg>
-        </div>
-        <div class="nav-tag">✦ Kal Se Game Change ✦</div>
-    </nav>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-inner">
-                <div class="eyebrow">🪔 SPECIAL LAUNCH · MIRA ROAD & BHAYANDAR EXCLUSIVE</div>
-                <h1>Kal Se Game Change.<br><span class="highlight">Apne Business Ko Do Next-Gen Digital Growth.</span></h1>
-                <p>Festival rush shuru hone se pehle apne local brand ko front row mein lao. Smart local SEO, high-converting Meta Ads, aur automated WhatsApp lead funnels ke sath har customer ko secure karo—bina kisi missed lead ke.</p>
-                <a href="https://wa.me/919321481079?text=Hi%20DiGi%20World%20Universe,%20I%20want%20to%20scale%20my%20business%20in%20Mira%20Road!" class="cta" target="_blank">Claim Your Instant Strategy Session 🪔</a>
-                <div class="micro">⚡ Live Tomorrow · Only 5 Mira Bhayandar Partner Slots Available</div>
+    <div class="Interface-layer">
+        <nav>
+            <div class="brand-container">
+                <svg class="official-logo" viewBox="0 0 520 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="5" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <text x="10" y="75" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="50" fill="#FFD700" letter-spacing="3" filter="url(#gold-glow)">DIGI WORLD</text>
+                    <text x="65" y="112" font-family="'Inter', Arial, sans-serif" font-weight="700" font-size="20" fill="#00F0FF" letter-spacing="9">MUMBAI</text>
+                </svg>
             </div>
-        </section>
+            <div class="nav-tag">✦ Mumbai Growth Engine ✦</div>
+        </nav>
 
-        <!-- Countdown Timer -->
-        <div class="countdown-container">
-            <div class="countdown-title">Launch Countdown (November 8, 2026)</div>
-            <div class="timer-boxes">
-                <div class="timer-box">
-                    <div class="timer-num" id="days">00</div>
-                    <div class="timer-label">Days</div>
+        <main>
+            <section class="hero">
+                <div class="hero-inner">
+                    <div class="eyebrow">⚡ METROPOLITAN DIGITAL DOMINANCE</div>
+                    <h1>Kal Se Game Change.<br><span class="highlight">Scale Your Business Across Mumbai.</span></h1>
+                    <p>From Mira Road to Colaba, dominate the market. Deploying next-gen local SEO, automated WhatsApp funnels, and high-velocity growth systems engineered for the Mumbai Metropolitan Region.</p>
+                    <a href="https://wa.me/919321481079?text=Hi%20DiGi%20World%20Universe,%20let's%20dominate%20the%20Mumbai%20market!" class="cta" target="_blank">Deploy Your Growth Engine ⚡</a>
                 </div>
-                <div class="timer-box">
-                    <div class="timer-num" id="hours">00</div>
-                    <div class="timer-label">Hours</div>
-                </div>
-                <div class="timer-box">
-                    <div class="timer-num" id="minutes">00</div>
-                    <div class="timer-label">Mins</div>
-                </div>
-                <div class="timer-box">
-                    <div class="timer-num" id="seconds">00</div>
-                    <div class="timer-label">Secs</div>
-                </div>
-            </div>
-        </div>
+            </section>
 
-        <!-- Interactive Growth Calculator -->
-        <section class="calc-section">
-            <div class="calc-card">
-                <div class="calc-grid">
-                    <div class="calc-input">
-                        <label for="budgetSlider">Monthly Ad & Marketing Budget: <span id="budgetValue" style="color:var(--gold);">₹25,000</span></label>
-                        <input type="range" id="budgetSlider" class="calc-slider" min="10000" max="200000" step="5000" value="25000">
-                        <p style="color:var(--muted); font-size:0.9rem; margin-top:12px;">Move the slider to estimate your festival lead generation and revenue potential with automated workflows.</p>
-                    </div>
-                    <div class="calc-result">
-                        <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted);">Estimated Festive ROI</div>
-                        <div class="calc-result-num" id="roiValue">₹1,75,000</div>
-                        <div style="font-size:0.85rem; color:var(--gold); font-weight:700;">Potential Revenue Generation</div>
+            <div class="section-spacer"></div>
+
+            <section class="content-section">
+                <div class="glass-panel">
+                    <div class="calc-grid">
+                        <div>
+                            <label for="budgetSlider" style="font-weight: 700; font-size: 1.2rem; margin-bottom: 20px; display: block;">Monthly Ad & Growth Budget: <span id="budgetValue" style="color:var(--gold-primary);">₹50,000</span></label>
+                            <input type="range" id="budgetSlider" class="calc-slider" min="20000" max="500000" step="10000" value="50000">
+                            <p style="color:var(--muted); margin-top: 20px; line-height: 1.6;">Adjust the slider to preview your automated lead generation and revenue scaling potential across the Mumbai market.</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="text-transform: uppercase; letter-spacing: 0.15em; color:var(--muted); font-size: 0.9rem;">Projected Mumbai ROI</div>
+                            <div class="calc-result-num" id="roiValue">₹3,50,000</div>
+                            <div style="color: var(--gold-primary); font-weight: 700; font-size: 1.1rem;">Estimated Revenue Generation</div>
+                        </div>
                     </div>
                 </div>
+            </section>
+
+            <div class="section-spacer"></div>
+
+            <div class="footer-seo">
+                <p><strong>DiGi World Universe</strong> is the premier digital marketing and business automation agency serving the entire <strong>Mumbai Metropolitan Region</strong>. Specializing in hyper-local Google Maps SEO, Meta Ads mastery, and custom AI/automation workflows, we empower enterprises across Mumbai, Thane, Navi Mumbai, and Mira Bhayandar to capture dominant market share.</p>
             </div>
-        </section>
+        </main>
+    </div>
 
-        <!-- Feature Cards Strip -->
-        <section class="strip">
-            <div class="strip-card problem">
-                <div class="icon">❌</div>
-                <div>
-                    <h2>Traditional Ads Wale <span>Raste Purane Ho Gaye</span></h2>
-                    <p>Sirf social media posts dalne se aaj ke time mein enquiries nahi aati. Bina automated WhatsApp funnels aur local SEO capture ke, aap apne competitors ko leads haath mein de rahe ho.</p>
-                </div>
-            </div>
-
-            <div class="strip-card solution">
-                <div class="icon">🚀</div>
-                <div>
-                    <h2>DiGi World Universe <span>Growth Framework</span></h2>
-                    <p>Hum connect karte hain high-converting Meta Ads, Apify maps scrapers, aur n8n automated WhatsApp lead funnels seedhe aapke Zoho CRM mein taaki ek bhi customer miss na ho.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Local SEO Keyword Rich Section for Crawlers -->
-        <div class="seo-local-footer-text">
-            DiGi World Universe is a premier digital marketing agency located in Mira Road East, Mumbai, specializing in local SEO ranking, Google Business Profile optimization, social media marketing, and automated lead generation for businesses across Mira Bhayandar.
-        </div>
-
-        <!-- Join Panel -->
-        <section class="join">
-            <div class="join-panel">
-                <div class="limit">⚡ Only 5 Agency Partner Slots Left</div>
-                <h2>Ready to Dominate Mira Road This Season?</h2>
-                <p>Let's set up your automated growth engine before the peak festive rush hits Mira Bhayandar.</p>
-                <a href="https://wa.me/919321481079?text=Hi%20DiGi%20World%20Universe,%20let's%20get%20started!" class="cta" target="_blank">Book Direct WhatsApp Strategy Call 🪔</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 <strong>DiGi World Universe</strong>. Built with flow in Mira Road, Mumbai.</p>
-    </footer>
-
+    <!-- Three.js & GSAP Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
     <script>
-        // Countdown Timer Logic targeting November 8, 2026 exactly
-        const targetDate = new Date('November 8, 2026 00:00:00').getTime();
+        const colors = ['#ffd700', '#ffaa00', '#00f0ff', '#ff4400', '#ffffff'];
+        window.addEventListener('mousemove', (e) => {
+            if(Math.random() > 0.3) return;
+            const p = document.createElement('div');
+            p.className = 'firework-particle';
+            const size = Math.random() * 8 + 4;
+            p.style.width = size + 'px';
+            p.style.height = size + 'px';
+            p.style.left = e.clientX + 'px';
+            p.style.top = e.clientY + 'px';
+            p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.appendChild(p);
+            setTimeout(() => p.remove(), 1000);
+        });
 
-        function updateTimer() {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-
-            if (diff > 0) {
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                const minutes = Math.floor((diff / 1000 / 60) % 60);
-                const seconds = Math.floor((diff / 1000) % 60);
-
-                document.getElementById('days').innerText = String(days).padStart(2, '0');
-                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
-                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
-            } else {
-                document.getElementById('days').innerText = '00';
-                document.getElementById('hours').innerText = '00';
-                document.getElementById('minutes').innerText = '00';
-                document.getElementById('seconds').innerText = '00';
-            }
-        }
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        // Interactive Calculator Logic
         const slider = document.getElementById('budgetSlider');
         const budgetVal = document.getElementById('budgetValue');
         const roiVal = document.getElementById('roiValue');
-
         slider.addEventListener('input', (e) => {
             const val = parseInt(e.target.value);
             budgetVal.innerText = '₹' + val.toLocaleString('en-IN');
-            const estReturn = val * 7;
-            roiVal.innerText = '₹' + estReturn.toLocaleString('en-IN');
+            roiVal.innerText = '₹' + (val * 7).toLocaleString('en-IN');
         });
 
-        // Background Particle Canvas
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let width = canvas.width = window.innerWidth;
-        let height = canvas.height = window.innerHeight;
+        const container = document.getElementById('webgl-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        camera.position.set(0, 2.5, 6);
+        camera.lookAt(0, 2, 0);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambientLight);
+        const directionalLight = new THREE.DirectionalLight(0xffd700, 1.5);
+        directionalLight.position.set(5, 10, 7);
+        scene.add(directionalLight);
+
+        const runwayLength = 40;
+        const runwayGeo = new THREE.PlaneGeometry(3, runwayLength);
+        const runwayMat = new THREE.MeshStandardMaterial({ 
+            color: 0x050b14, 
+            roughness: 0.1, 
+            metalness: 0.8,
+            emissive: 0x0b172a,
+            emissiveIntensity: 0.5
+        });
+        const runway = new THREE.Mesh(runwayGeo, runwayMat);
+        runway.rotation.x = -Math.PI / 2;
+        runway.position.set(0, 0, -runwayLength/2 + 5);
+        scene.add(runway);
+
+        const stripGroup = new THREE.Group();
+        const stripGeo = new THREE.PlaneGeometry(0.1, 1);
+        const stripMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff });
+        for(let i=0; i<20; i++) {
+            const leftStrip = new THREE.Mesh(stripGeo, stripMat);
+            leftStrip.position.set(-1.4, 0.01, -i * 2);
+            leftStrip.rotation.x = -Math.PI / 2;
+            stripGroup.add(leftStrip);
+            
+            const rightStrip = new THREE.Mesh(stripGeo, stripMat);
+            rightStrip.position.set(1.4, 0.01, -i * 2);
+            rightStrip.rotation.x = -Math.PI / 2;
+            stripGroup.add(rightStrip);
+        }
+        scene.add(stripGroup);
+
+        const textureLoader = new THREE.TextureLoader();
+        let characterMesh;
+        textureLoader.load(
+            'watermarked_img_2867409068118996662.png',
+            (texture) => {
+                const charGeo = new THREE.PlaneGeometry(2.2, 4.4);
+                const charMat = new THREE.MeshBasicMaterial({ 
+                    map: texture, 
+                    transparent: true,
+                    side: THREE.DoubleSide 
+                });
+                characterMesh = new THREE.Mesh(charGeo, charMat);
+                characterMesh.position.set(0, 2.2, 0);
+                scene.add(characterMesh);
+                setupScrollAnimation();
+            },
+            undefined,
+            (err) => console.error("Texture loading failed", err)
+        );
+
+        const particleCount = 120;
+        const particleGeo = new THREE.SphereGeometry(0.04, 8, 8);
+        const particleMat = new THREE.MeshBasicMaterial({ color: 0xffd700 });
+        const particleMesh = new THREE.InstancedMesh(particleGeo, particleMat, particleCount);
+        const dummy = new THREE.Object3D();
+        const particleData = [];
+
+        for(let i=0; i<particleCount; i++) {
+            const x = (Math.random() - 0.5) * 6;
+            const y = Math.random() * 6;
+            const z = (Math.random() - 0.5) * 20;
+            particleData.push({x, y, z, speed: Math.random() * 0.02 + 0.01});
+            dummy.position.set(x, y, z);
+            dummy.updateMatrix();
+            particleMesh.setMatrixAt(i, dummy.matrix);
+        }
+        scene.add(particleMesh);
+
+        function updateParticles() {
+            for(let i=0; i<particleCount; i++) {
+                particleData[i].y += particleData[i].speed;
+                if(particleData[i].y > 6) particleData[i].y = 0;
+                dummy.position.set(particleData[i].x, particleData[i].y, particleData[i].z);
+                dummy.updateMatrix();
+                particleMesh.setMatrixAt(i, dummy.matrix);
+            }
+            particleMesh.instanceMatrix.needsUpdate = true;
+        }
+
+        function setupScrollAnimation() {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: "main",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    invalidateOnRefresh: true
+                }
+            })
+            .to(characterMesh.position, {
+                z: -12,
+                ease: "power1.inOut"
+            })
+            .to(characterMesh.rotation, {
+                z: 0.05,
+                repeat: 5,
+                yoyo: true,
+                duration: 1
+            }, 0);
+        }
+
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            updateParticles();
+            
+            if(characterMesh) {
+                characterMesh.position.y = 2.2 + Math.sin(clock.getElapsedTime() * 2) * 0.05;
+            }
+            
+            renderer.render(scene, camera);
+        }
+        animate();
 
         window.addEventListener('resize', () => {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
         });
-
-        const particles = Array.from({ length: 30 }, () => ({
-            x: Math.random() * width,
-            y: Math.random() * height,
-            size: Math.random() * 2.5 + 0.5,
-            speedY: Math.random() * 0.5 + 0.2,
-            opacity: Math.random() * 0.7 + 0.3
-        }));
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, width, height);
-            ctx.fillStyle = '#ffc86a';
-            particles.forEach(p => {
-                ctx.globalAlpha = p.opacity;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
-                p.y -= p.speedY;
-                if (p.y < 0) p.y = height;
-            });
-            requestAnimationFrame(animateParticles);
-        }
-        animateParticles();
     </script>
 </body>
 </html>
