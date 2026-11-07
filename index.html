@@ -7,13 +7,11 @@
     <meta name="description" content="Dominate the digital landscape across Mumbai, Mira Road, and beyond. DiGi World Universe delivers cutting-edge local SEO, automated funnels, and high-converting growth engines.">
     <meta name="keywords" content="Digital Marketing Agency Mumbai, Local SEO Expert Mumbai, Automated Lead Generation, Business Growth Mumbai, DiGi World Universe">
     
-    <!-- OpenGraph Social Sharing -->
     <meta property="og:title" content="DiGi World Universe | Next-Gen Digital Growth Mumbai">
     <meta property="og:description" content="Scale your business across the Mumbai Metropolitan Region with automated workflows and dominant local SEO.">
     <meta property="og:url" content="https://digiuniverse.world">
     <meta property="og:type" content="website">
 
-    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -86,7 +84,6 @@
             z-index: 10;
         }
 
-        /* Ambient Lighting Effects */
         .cinematic-vignette {
             position: fixed;
             inset: 0;
@@ -207,7 +204,7 @@
             border-radius: 18px;
             font-size: 1.25rem;
             box-shadow: 0 0 60px rgba(255, 215, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-            transition: transform 0.3s cubicGetComponent, box-shadow 0.3s ease;
+            transition: transform 0.3s cubic(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
             border: none;
             cursor: pointer;
         }
@@ -426,8 +423,12 @@
 
         const textureLoader = new THREE.TextureLoader();
         let characterMesh;
+        
+        // Using a reliable public CDN link for the character asset
+        const characterImageUrl = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';
+
         textureLoader.load(
-            'watermarked_img_2867409068118996662.png',
+            characterImageUrl,
             (texture) => {
                 const charGeo = new THREE.PlaneGeometry(2.2, 4.4);
                 const charMat = new THREE.MeshBasicMaterial({ 
@@ -513,6 +514,5 @@
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
-    </script>
-</body>
+    </script></body>
 </html>
