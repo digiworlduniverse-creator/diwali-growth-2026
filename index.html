@@ -31,33 +31,36 @@ body {
 a {text-decoration:none;color:inherit}
 .container {width:min(1200px,91%);margin:auto}
 
-/* HERO SECTION WITH VIDEO BACKGROUND */
+/* HERO SECTION */
 .hero {
   min-height:100vh;
   position:relative;
   overflow:hidden;
-  background:#080d20;
+  background:
+    radial-gradient(ellipse at 50% 70%,rgba(255,130,34,.18),transparent 50%),
+    radial-gradient(ellipse at 90% 10%,rgba(96,71,180,.25),transparent 35%),
+    linear-gradient(145deg,#080d20,#121b36 55%,#080d20);
 }
-.hero-video-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: 0;
-  opacity: 0.35; /* Blends nicely with the dark theme */
+.hero:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.22;
+  background-image:
+    linear-gradient(rgba(255,215,130,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,215,130,.06) 1px,transparent 1px);
+  background-size:65px 65px;
 }
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 70%,rgba(255,130,34,.18),transparent 60%),
-              linear-gradient(145deg,rgba(8,13,32,0.88),rgba(18,27,54,0.92) 55%,rgba(8,13,32,0.95));
-  z-index: 1;
+.glow {
+  position:absolute;
+  width:450px;height:450px;
+  border-radius:50%;
+  filter:blur(100px);
+  pointer-events:none;
 }
+.glow.one {background:#ff8a25;opacity:.13;top:25%;left:-200px}
+.glow.two {background:#744bff;opacity:.18;right:-200px;top:10%}
 
 /* PARTICLES */
 .particles {
@@ -65,7 +68,6 @@ a {text-decoration:none;color:inherit}
   inset:0;
   pointer-events:none;
   overflow:hidden;
-  z-index: 2;
 }
 .particle {
   position:absolute;
@@ -517,11 +519,6 @@ footer {
 <body>
 
 <div class="hero" id="home">
-  <!-- Background Video Integration (Dhan.mp4) -->
-  <video autoplay muted loop playsinline class="hero-video-bg">
-    <source src="Dhan.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
   <div class="particles" id="particles"></div>
 
   <div class="container">
