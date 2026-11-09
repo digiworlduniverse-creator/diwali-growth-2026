@@ -96,11 +96,41 @@ a {text-decoration:none;color:inherit}
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
-.logo-img {
-  height: 50px;
-  object-fit: contain;
+.logo-sun {
+  width: 44px;
+  height: 44px;
+  background: radial-gradient(circle, #ffe6a0 0%, #ffac36 60%, #ff752e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: #080d20;
+  box-shadow: 0 0 15px rgba(255, 172, 54, 0.4);
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.logo-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #fff1c4, #ffba4d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+.logo-sub {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #b9bfd0;
+  text-transform: uppercase;
 }
 
 .nav-tag {
@@ -462,10 +492,6 @@ footer {
   gap: 12px;
   margin-bottom: 15px;
 }
-.footer-logo-img {
-  height: 32px;
-  object-fit: contain;
-}
 .footer-brand {
   font-family: 'Playfair Display',serif;
   font-weight: 800;
@@ -501,7 +527,6 @@ footer {
 }
 
 @media(max-width: 550px) {
-  .logo-img {height: 38px;}
   .nav-tag {font-size: 9px; padding: 9px 11px; letter-spacing: 1px}
   .hero h1 {font-size: 38px}
   .hero-description {font-size: 14px}
@@ -511,14 +536,6 @@ footer {
   .diya {width: 42px; height: 20px}
   .whatsapp-float {width: 52px; height: 52px; font-size: 26px; bottom: 20px; right: 20px;}
   .character-image-wrapper {height: 360px;}
-}
-
-@media(prefers-reduced-motion:reduce) {
-  *,*:before,*:after {
-    animation-duration: .01ms!important;
-    animation-iteration-count: 1!important;
-    scroll-behavior: auto!important;
-  }
 }
 </style>
 </head>
@@ -534,7 +551,11 @@ footer {
     <nav class="navbar">
       <a href="#home">
         <div class="logo-container">
-          <img class="logo-img" src="assets/digi-world-logo.jpg" alt="DiGi World Universe Logo">
+          <div class="logo-sun">S</div>
+          <div class="logo-text">
+            <span class="logo-title">DIGI WORLD</span>
+            <span class="logo-sub">WORK WITH FLOW UNIVERSE</span>
+          </div>
         </div>
       </a>
       <div class="nav-tag">🪔 DIWALI SPECIAL 2026</div>
@@ -546,8 +567,7 @@ footer {
       <div class="hero-visual-col">
         <div class="character-card">
           <div class="character-image-wrapper">
-            <!-- Ensure your character image is saved in 'assets/' folder as character-model.jpg -->
-            <img src="assets/character-model.jpg" alt="DiGi World Character Model">
+            <img src="assets/character-model.jpg" alt="DiGi World Character Model" onerror="this.style.display='none';">
           </div>
         </div>
       </div>
@@ -689,7 +709,7 @@ footer {
 <footer>
   <div class="container">
     <div class="footer-logo-wrap">
-      <img class="footer-logo-img" src="assets/digi-world-logo.jpg" alt="DiGi World Universe">
+      <div class="logo-sun" style="width:28px;height:28px;font-size:14px;">S</div>
       <div class="footer-brand">DiGi World Universe</div>
     </div>
     <p>© 2026 DiGi World Universe. Work With Flow.</p>
